@@ -33,3 +33,38 @@ c:\users\anton\documents\visual studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\obj\D
 c:\users\anton\documents\visual studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\obj\Debug\ProjectArchitectures.txt
 c:\users\anton\documents\visual studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml
 c:\users\anton\documents\visual studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\obj\Debug\XapCacheFile.xml
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL.dll
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL.pdb
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\resources.pri
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppxManifest.xml
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL.build.appxrecipe
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppManifest.xaml
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL_Debug_AnyCPU.xap
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\App.g.cs
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MainPage.g.cs
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.g.resources
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.Resources.AppResources.resources
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.csproj.GenerateResource.Cache
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.dll
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.pdb
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\priconfig.xml
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\priconfig.xml.intermediate
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\layout.resfiles
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\layout.resfiles.intermediate
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\resources.resfiles
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\resources.resfiles.intermediate
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\pri.resfiles
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\pri.resfiles.intermediate
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\qualifiers.txt
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\qualifiers.txt.intermediate
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\ProjectArchitectures.txt
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\XapCacheFile.xml

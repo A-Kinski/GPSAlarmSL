@@ -1,23 +1,23 @@
-﻿<xapCache source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="16.12.2016 16:22:16">
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="13.12.2016 13:46:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.dll" archivePath="GPSAlarmSL.dll" lastWriteTime="16.12.2016 16:22:16" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\Media\Ring01.wma" archivePath="Assets\Media\Ring01.wma" lastWriteTime="13.12.2016 13:43:42" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\SquareTile150x150.png" archivePath="Assets\SquareTile150x150.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\SquareTile71x71.png" archivePath="Assets\SquareTile71x71.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\StoreLogo.png" archivePath="Assets\StoreLogo.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\WideLogo.png" archivePath="Assets\WideLogo.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="08.12.2016 21:52:43" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="06.12.2016 21:21:10" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="08.12.2016 21:52:43" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="16.12.2016 16:22:16" />
-  <file source="C:\Users\Anton\Documents\Visual Studio 2015\Projects\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="13.12.2016 13:46:10" />
+﻿<xapCache source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="16.12.2016 21:29:40">
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="16.12.2016 21:29:40" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.dll" archivePath="GPSAlarmSL.dll" lastWriteTime="16.12.2016 21:29:40" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\Media\Ring01.wma" archivePath="Assets\Media\Ring01.wma" lastWriteTime="13.12.2016 13:43:42" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\SquareTile150x150.png" archivePath="Assets\SquareTile150x150.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\SquareTile71x71.png" archivePath="Assets\SquareTile71x71.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\StoreLogo.png" archivePath="Assets\StoreLogo.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\WideLogo.png" archivePath="Assets\WideLogo.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="16.12.2016 21:27:43" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="06.12.2016 21:21:10" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="16.12.2016 21:27:43" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="16.12.2016 21:29:40" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="16.12.2016 21:29:40" />
 </xapCache>
