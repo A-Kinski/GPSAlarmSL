@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
 using Windows.Foundation;
-
+using Windows.Storage;
 
 namespace GPSAlarmSL
 {
@@ -27,6 +27,8 @@ namespace GPSAlarmSL
        // private Geoposition pos = null;
         private MapLayer currentPositionLayer = new MapLayer();
         private MapLayer destinationPositionLayer = new MapLayer();
+        private static Queue<GeoCoordinate> oldDestinationQueue = new Queue<GeoCoordinate>();
+
 
         // Конструктор
         public MainPage()
@@ -78,12 +80,11 @@ namespace GPSAlarmSL
 
         private void mainMap_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            GeoCoordinate tappedCoordinate = this.mainMap.ConvertViewportPointToGeoCoordinate(e.GetPosition(this.mainMap));
-            coord.setDestinationCoordinate(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
-            drawPoint("destination", tappedCoordinate.Latitude, tappedCoordinate.Longitude);
-
+            //GeoCoordinate tappedCoordinate = this.mainMap.ConvertViewportPointToGeoCoordinate(e.GetPosition(this.mainMap));
+            //coord.setDestinationCoordinate(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
+            //drawPoint("destination", tappedCoordinate.Latitude, tappedCoordinate.Longitude);
+            //OldDestinationQueueWrite(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
         }
-
 
         public void drawPoint(String t, double latitude, double longitude)
         {
@@ -146,6 +147,48 @@ namespace GPSAlarmSL
         private void MyPosition_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             mainMap.Center = coord.GetCoordinate();
+        }
+
+        private void SearchButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            String oldCoordinateParametr = HitchCoordinateInString();
+            NavigationService.Navigate(new Uri(string.Format("/SearchPage.xaml?oldDestination={0}",oldCoordinateParametr), UriKind.Relative));
+        }
+
+        private string HitchCoordinateInString()
+        {
+            string result = "";
+            List<GeoCoordinate> tmpGeoCoordList = oldDestinationQueue.ToList();
+
+            for (int i = 0; i < tmpGeoCoordList.Count; i++)
+            {
+                result += tmpGeoCoordList[i].Latitude + ":" + tmpGeoCoordList[i].Longitude;
+
+                if (i != tmpGeoCoordList.Count - 1) result += "@";
+            }
+
+            return result;
+        }
+
+        internal static void OldDestinationQueueWrite(double oldLatitude, double oldLongitude)
+        {
+            oldDestinationQueue.Enqueue(new GeoCoordinate(oldLatitude, oldLongitude));
+
+            if (oldDestinationQueue.Count > 10)
+                oldDestinationQueue.Dequeue();
+        }
+
+        internal static Queue<GeoCoordinate> GetOldDestinationCoordinateQueue()
+        {
+            return oldDestinationQueue;
+        }
+
+        private void mainMap_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            GeoCoordinate tappedCoordinate = this.mainMap.ConvertViewportPointToGeoCoordinate(e.GetPosition(this.mainMap));
+            coord.setDestinationCoordinate(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
+            drawPoint("destination", tappedCoordinate.Latitude, tappedCoordinate.Longitude);
+            OldDestinationQueueWrite(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
         }
     }
 }

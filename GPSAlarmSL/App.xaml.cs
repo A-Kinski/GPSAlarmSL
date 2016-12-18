@@ -7,11 +7,20 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using GPSAlarmSL.Resources;
+using System.Collections.Generic;
+using Windows.Storage;
+using System.Device.Location;
 
 namespace GPSAlarmSL
 {
     public partial class App : Application
     {
+        /// <summary>
+        /// Обеспечивает сохранение координат пункта назначения в памяти приложения
+        /// </summary>
+        /// <returns>DataContainer, содержит 10 координат пунктов назначения</returns>
+        ApplicationDataContainer oldDestinationDataContainer;
+
         /// <summary>
         /// Обеспечивает быстрый доступ к корневому кадру приложения телефона.
         /// </summary>
@@ -35,6 +44,9 @@ namespace GPSAlarmSL
             // Инициализация отображения языка
             InitializeLanguage();
 
+            //Инициализация пользовательских переменных
+            InitialazeUserVariable();
+
             // Отображение сведений о профиле графики во время отладки.
             if (Debugger.IsAttached)
             {
@@ -57,6 +69,11 @@ namespace GPSAlarmSL
 
         }
 
+        private void InitialazeUserVariable()
+        {
+            oldDestinationDataContainer = ApplicationData.Current.LocalSettings;
+        }
+
         // Код, который выполняется, если при активации контракта, такого как открытие файла или выбор файлов в окне сохранения, возвращается 
         // выбранный файл или другие возвращаемые значения
         private void Application_ContractActivated(object sender, Windows.ApplicationModel.Activation.IActivatedEventArgs e)
@@ -67,24 +84,28 @@ namespace GPSAlarmSL
         // Этот код не будет выполняться при повторной активации приложения
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            CheckDataContainer();
         }
 
         // Код для выполнения при активации приложения (переводится в основной режим)
         // Этот код не будет выполняться при первом запуске приложения
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            CheckDataContainer();
         }
 
         // Код для выполнения при деактивации приложения (отправляется в фоновый режим)
         // Этот код не будет выполняться при закрытии приложения
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
+            WriteDataContainer();
         }
 
         // Код для выполнения при закрытии приложения (например, при нажатии пользователем кнопки "Назад")
         // Этот код не будет выполняться при деактивации приложения
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
+            WriteDataContainer();
         }
 
         // Код для выполнения в случае ошибки навигации
@@ -228,5 +249,69 @@ namespace GPSAlarmSL
                 throw;
             }
         }
+
+        /// <summary>
+        /// Проверка DataContainer на наналичие данных и сохранение их в очередь
+        /// </summary>
+        private void CheckDataContainer()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                string nameLatitudeValue = $"oldDestLatitude{i}";
+                string nameLongitudeValue = $"oldDestLongitude{i}";
+                double oldLatitude = 9999;
+                double oldLongitude = 9999;
+
+                if (oldDestinationDataContainer.Values.ContainsKey(nameLatitudeValue))
+                {
+                    oldLatitude = (double)oldDestinationDataContainer.Values[nameLatitudeValue];
+                }
+
+                if (oldDestinationDataContainer.Values.ContainsKey(nameLongitudeValue))
+                {
+                    oldLongitude = (double)oldDestinationDataContainer.Values[nameLongitudeValue];
+                }
+
+                if (oldLatitude != 9999 && oldLongitude != 9999)
+                {
+                    MainPage.OldDestinationQueueWrite(oldLatitude, oldLongitude);
+                }
+            }
+        }
+
+        private void WriteDataContainer()
+        {
+            Queue<GeoCoordinate> oldDestinationQueue = new Queue<GeoCoordinate>();
+            oldDestinationQueue = MainPage.GetOldDestinationCoordinateQueue();
+            int count = oldDestinationQueue.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                string nameLatitudeValue = $"oldDestLatitude{i}";
+                string nameLongitudeValue = $"oldDestLongitude{i}";
+                GeoCoordinate oldCoordinate = oldDestinationQueue.Dequeue() as GeoCoordinate;
+
+                if (oldDestinationDataContainer.Values.ContainsKey(nameLatitudeValue))
+                {
+                    oldDestinationDataContainer.Values.Remove(nameLatitudeValue);
+                    oldDestinationDataContainer.Values[nameLatitudeValue] = oldCoordinate.Latitude;
+                }
+                else
+                {
+                    oldDestinationDataContainer.Values[nameLatitudeValue] =oldCoordinate.Latitude;
+                }
+
+                if (oldDestinationDataContainer.Values.ContainsKey(nameLongitudeValue))
+                {
+                    oldDestinationDataContainer.Values.Remove(nameLongitudeValue);
+                    oldDestinationDataContainer.Values[nameLongitudeValue] = oldCoordinate.Longitude;
+                }
+                else
+                {
+                    oldDestinationDataContainer.Values[nameLongitudeValue] = oldCoordinate.Longitude;
+                }
+            }
+        }
+
     }
 }

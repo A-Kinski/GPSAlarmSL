@@ -68,3 +68,4 @@ C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MultipleQualifiersPe
 C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\ProjectArchitectures.txt
 C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml
 C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\XapCacheFile.xml
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\SearchPage.g.cs

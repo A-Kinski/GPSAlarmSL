@@ -70,7 +70,7 @@
                 Loaded="mainMap_Loaded" 
                 Tap="mainMap_Tap"
                 Grid.RowSpan="3"
-                Grid.Column="0"
+                Grid.ColumnSpan="2" DoubleTap="mainMap_DoubleTap"
             />
             <Button 
                 Name="ZoomIn"
@@ -80,7 +80,9 @@
                 Grid.Column="1"
                 Height="70"
                 Width="80"
-                VerticalAlignment="Bottom" Tap="ZoomIn_Tap" 
+                VerticalAlignment="Bottom" 
+                Tap="ZoomIn_Tap" 
+                Background="Black" 
                 />
             <Button 
                 Name="ZoomOut"
@@ -90,7 +92,9 @@
                 Grid.Column="1"
                 Height="70"
                 Width="80"
-                VerticalAlignment="Center" Tap="ZoomOut_Tap"/>
+                VerticalAlignment="Center" 
+                Tap="ZoomOut_Tap"
+                Background="Black"/>
             <Button 
                 Name="MyPosition"
                 Content="*" 
@@ -98,7 +102,18 @@
                 Grid.Column="1"
                 Height="70"
                 Width="80"
-                VerticalAlignment="Top" Tap="MyPosition_Tap"/>
+                VerticalAlignment="Top" 
+                Tap="MyPosition_Tap"
+                Background="Black"/>
+            <Button
+                Name="SearchButton"
+                Content="Поиск"
+                Grid.Row="2"
+                Grid.Column="1"
+                VerticalAlignment="Bottom" 
+                Tap="SearchButton_Tap"
+                Background="Black"
+                />
         </Grid>
 
     </Grid>
