@@ -17,6 +17,11 @@ using System.Collections.Specialized;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Storage;
+using Windows.ApplicationModel.Background;
+using Windows.Devices.Geolocation.Geofencing;
+using Windows.UI.Core;
+using Windows.UI.Popups;
+
 
 namespace GPSAlarmSL
 {
@@ -24,16 +29,23 @@ namespace GPSAlarmSL
     {
         private Coordinate coord;
         private Geolocator myGeolocator;
-       // private Geoposition pos = null;
+
         private MapLayer currentPositionLayer = new MapLayer();
         private MapLayer destinationPositionLayer = new MapLayer();
         private static Queue<GeoCoordinate> oldDestinationQueue = new Queue<GeoCoordinate>();
 
+        private IBackgroundTaskRegistration _geolocTask = null;
+        private const string SampleBackgroundTaskName = "BackgroundGPSTask";
+        private const string SampleBackgroundTaskEntryPoint = "BackgroundGPS.BackgroundGPS";
+
+        GeofenceMonitor _monitor = GeofenceMonitor.Current;
 
         // Конструктор
         public MainPage()
         {
             InitializeComponent();
+
+            _monitor.GeofenceStateChanged += _monitor_GeofenceStateChanged;
 
             myGeolocator = new Geolocator();
             myGeolocator.MovementThreshold = 5;
@@ -41,7 +53,61 @@ namespace GPSAlarmSL
 
             mainMap.Layers.Add(currentPositionLayer);
             mainMap.Layers.Add(destinationPositionLayer);
+
+            RegisterBackgroundTask();
         }
+
+        private void _monitor_GeofenceStateChanged(GeofenceMonitor sender, object args)
+        {
+            var fences = sender.ReadReports();
+
+            foreach (var report in fences)
+            {
+                if (report.Geofence.Id != "destinationCircle") continue;
+
+
+                switch (report.NewState)
+                {
+                    case GeofenceState.Entered:
+                        Dispatcher.BeginInvoke(async () =>
+                        {
+                            string message = "Hello, MessageBox!";
+                            string caption = "Caption text";
+                            MessageBoxButton buttons = MessageBoxButton.OKCancel;
+                            // Show message box
+                            MessageBoxResult result = MessageBox.Show(message, caption, buttons);
+
+                            //MessageDialog dialog = new MessageDialog("Welcome to building 9");
+                            //await dialog.ShowAsync();
+                        });
+                        break;
+                }
+            }
+        }
+
+        async private void RegisterBackgroundTask()
+        {
+            BackgroundAccessStatus backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+
+            BackgroundTaskBuilder geolocTaskBuilder = new BackgroundTaskBuilder();
+
+            geolocTaskBuilder.Name = SampleBackgroundTaskName;
+            geolocTaskBuilder.TaskEntryPoint = SampleBackgroundTaskEntryPoint;
+
+            var trigger = new LocationTrigger(LocationTriggerType.Geofence);
+
+            geolocTaskBuilder.SetTrigger(trigger);
+
+            _geolocTask = geolocTaskBuilder.Register();
+
+            _geolocTask.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
+        }
+
+        async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs e)
+        {
+            string str = "string";
+        }
+
 
         private void MyGeolocator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
         {
@@ -69,6 +135,8 @@ namespace GPSAlarmSL
 
             mainMap.Center = myGeoCoordinate;
             mainMap.ZoomLevel = 17;
+
+            
         }
 
 
@@ -189,6 +257,16 @@ namespace GPSAlarmSL
             coord.setDestinationCoordinate(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
             drawPoint("destination", tappedCoordinate.Latitude, tappedCoordinate.Longitude);
             OldDestinationQueueWrite(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
+
+            //создание geofence
+            BasicGeoposition pos = new BasicGeoposition { Latitude = tappedCoordinate.Latitude, Longitude = tappedCoordinate.Longitude };
+            Geofence destinationFence = new Geofence("destinationCircle", new Geocircle(pos, 100), MonitoredGeofenceStates.Entered, true);
+
+            try
+            {
+                _monitor.Geofences.Add(destinationFence);
+            }
+            catch { }
         }
     }
 }

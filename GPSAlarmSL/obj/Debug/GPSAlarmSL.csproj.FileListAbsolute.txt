@@ -69,3 +69,8 @@ C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\ProjectArchitectures
 C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml
 C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\XapCacheFile.xml
 C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\SearchPage.g.cs
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.csprojResolveAssemblyReference.cache
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\BackgroundGPS.winmd
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\BackgroundGPS.pdb
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\BackgroundGPS.pri
+C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL.dll.config

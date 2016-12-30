@@ -28,9 +28,9 @@
         <m3:SplashScreen Image="Assets\SplashScreen.png" />
       </m3:VisualElements>
       <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundGPS.BackgroundGPS">
           <BackgroundTasks>
-            <Task Type="systemEvent" />
+            <m2:Task Type="location" />
           </BackgroundTasks>
         </Extension>
       </Extensions>
@@ -45,6 +45,12 @@
       <InProcessServer>
         <Path>AgHostSvcs.dll</Path>
         <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>CLRHost.dll</Path>
+        <ActivatableClass ActivatableClassId="BackgroundGPS.BackgroundGPS" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>

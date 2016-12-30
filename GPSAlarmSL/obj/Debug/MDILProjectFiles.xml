@@ -22,5 +22,7 @@
     <File>WMAppManifest.xml</File>
     <File>AppxManifest.xml</File>
   </XAPFiles>
-  <APPXFiles />
+  <APPXFiles>
+    <File>BackgroundGPS.winmd</File>
+  </APPXFiles>
 </Files>

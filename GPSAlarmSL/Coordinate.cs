@@ -53,7 +53,7 @@ namespace GPSAlarmSL
         private void alarmLetsGo()
         {
             GpsAlarm gpsAlarm = new GpsAlarm();
-            gpsAlarm.createAlarm();
+            //gpsAlarm.createAlarm();
             
         }
 

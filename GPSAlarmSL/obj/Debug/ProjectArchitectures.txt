@@ -1,1 +1,2 @@
 C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\GPSAlarmSL.csproj;neutral
+C:\Users\Anton\Source\Repos\GPSAlarmSL\WindowsRuntimeComponent1\BackgroundGPS.csproj;neutral
