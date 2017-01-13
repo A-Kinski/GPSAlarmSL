@@ -68,9 +68,9 @@
             <maps:Map 
                 x:Name="mainMap"
                 Loaded="mainMap_Loaded" 
-                Tap="mainMap_Tap"
                 Grid.RowSpan="3"
-                Grid.ColumnSpan="2" DoubleTap="mainMap_DoubleTap"
+                Grid.ColumnSpan="2" 
+                DoubleTap="mainMap_DoubleTap" Hold="mainMap_Hold"
             />
             <Button 
                 Name="ZoomIn"

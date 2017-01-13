@@ -10,6 +10,7 @@ using GPSAlarmSL.Resources;
 using System.Collections.Generic;
 using Windows.Storage;
 using System.Device.Location;
+using Windows.Devices.Geolocation;
 
 namespace GPSAlarmSL
 {
@@ -21,13 +22,24 @@ namespace GPSAlarmSL
         /// <returns>DataContainer, содержит 10 координат пунктов назначения</returns>
         ApplicationDataContainer oldDestinationDataContainer;
 
+        public static Geolocator Geolocator { get; set; }
+        public static bool RunningInBackground { get; set; }
+
         /// <summary>
         /// Обеспечивает быстрый доступ к корневому кадру приложения телефона.
         /// </summary>
         /// <returns>Корневой кадр приложения телефона.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
-        /// <summary>
+        private void Application_RunningInBackground(object sender, RunningInBackgroundEventArgs args)
+		{
+			RunningInBackground = true;
+			//TODO Suspend all unnecessary processing such as UI updates
+		}
+		
+		
+		
+		/// <summary>
         /// Конструктор объекта приложения.
         /// </summary>
         public App()
@@ -92,6 +104,7 @@ namespace GPSAlarmSL
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
             CheckDataContainer();
+			RunningInBackground = false;
         }
 
         // Код для выполнения при деактивации приложения (отправляется в фоновый режим)

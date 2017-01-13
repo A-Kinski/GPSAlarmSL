@@ -14,7 +14,8 @@
         <!--Обязательный объект, обрабатывающий события времени жизни приложения-->
         <shell:PhoneApplicationService
             Launching="Application_Launching" Closing="Application_Closing"
-            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+            Activated="Application_Activated" Deactivated="Application_Deactivated"
+            RunningInBackground="Application_RunningInBackground"/>
     </Application.ApplicationLifetimeObjects>
 
 </Application>

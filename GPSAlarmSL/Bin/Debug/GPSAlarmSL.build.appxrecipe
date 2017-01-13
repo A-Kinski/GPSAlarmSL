@@ -25,9 +25,6 @@
     <AppxPackagedFile Include="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL.dll">
       <PackagePath>GPSAlarmSL.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anton\Source\Repos\GPSAlarmSL\WindowsRuntimeComponent1\bin\Debug\BackgroundGPS.winmd">
-      <PackagePath>BackgroundGPS.winmd</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\AlignmentGrid.png">
       <PackagePath>Assets\AlignmentGrid.png</PackagePath>
     </AppxPackagedFile>

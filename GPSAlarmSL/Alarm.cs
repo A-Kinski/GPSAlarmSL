@@ -59,7 +59,7 @@ namespace GPSAlarmSL
                     Alarm bufferAlarm = ScheduledActionService.Find("destinationAlarm") as Alarm;
                     bufferAlarm.BeginTime = DateTime.Now.AddSeconds(20);
                     bufferAlarm.ExpirationTime = alarm.BeginTime.AddMinutes(2);
-                    bufferAlarm.Content = "123";
+                    //bufferAlarm.Content = "123";
                     ScheduledActionService.Replace(bufferAlarm);
                 }
             }
