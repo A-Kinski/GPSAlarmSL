@@ -1,6 +1,6 @@
-﻿<xapCache source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="13.01.2017 21:27:41">
-  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="13.01.2017 21:22:28" />
-  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.dll" archivePath="GPSAlarmSL.dll" lastWriteTime="13.01.2017 21:27:40" />
+﻿<xapCache source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\GPSAlarmSL_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="14.02.2017 18:40:36">
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="14.02.2017 18:20:24" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\GPSAlarmSL.dll" archivePath="GPSAlarmSL.dll" lastWriteTime="14.02.2017 18:40:35" />
   <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="06.12.2016 21:21:10" />
   <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="06.12.2016 21:21:10" />
   <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="06.12.2016 21:21:10" />
@@ -18,6 +18,6 @@
   <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="06.12.2016 21:21:10" />
   <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="06.12.2016 21:21:10" />
   <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="12.01.2017 22:05:55" />
-  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="13.01.2017 21:27:41" />
-  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="13.01.2017 21:22:28" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="14.02.2017 18:40:36" />
+  <file source="C:\Users\Anton\Source\Repos\GPSAlarmSL\GPSAlarmSL\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="14.02.2017 18:20:24" />
 </xapCache>

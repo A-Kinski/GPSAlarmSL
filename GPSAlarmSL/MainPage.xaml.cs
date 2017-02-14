@@ -9,6 +9,7 @@ using Windows.Devices.Geolocation;
 using Microsoft.Phone.Maps.Controls;
 using System.Windows.Shapes;
 using System.Windows.Media;
+using Microsoft.Phone.BackgroundAudio;
 
 
 namespace GPSAlarmSL
@@ -55,7 +56,20 @@ namespace GPSAlarmSL
                 App.Geolocator.PositionChanged += MyGeolocator_PositionChanged;
             }
 
+            alarm.MediaEnded += AlarmLoopback;
+
             mapSeetings();
+        }
+
+        private void AlarmLoopback(object sender, RoutedEventArgs e)
+        {
+            var alarmMedia = sender as System.Windows.Controls.MediaElement;
+
+            if (alarmMedia != null)
+            {
+                alarmMedia.Position = new TimeSpan(0);
+                alarmMedia.Play();
+            }
         }
 
         protected override void OnRemovedFromJournal(System.Windows.Navigation.JournalEntryRemovedEventArgs e)
@@ -96,9 +110,22 @@ namespace GPSAlarmSL
             if (Coordinate.GetDistance(latitude, longitude, destinationLatitude, destinationLongitude) < alarmDistance)
             {
                 //TODO будильник
-                GpsAlarm gpsAlarm = new GpsAlarm();
-                gpsAlarm.createAlarm();
+                //GpsAlarm gpsAlarm = new GpsAlarm(alarm);
+                //gpsAlarm.createAlarm();
+
+                //BackgroundAudioPlayer.Instance.Play();
+                //alarm.Play();
+
+                PlayAlarm();
             }
+        }
+
+        private void PlayAlarm()
+        {
+            alarm.Play();
+
+            //TODO ToastNotification
+
         }
         #endregion
 
@@ -139,8 +166,8 @@ namespace GPSAlarmSL
                 Content = new Ellipse
                 {
                     Fill = new SolidColorBrush(color),
-                    Width = 10,
-                    Height = 10
+                    Width = 30,
+                    Height = 30
                 }
             };
 
@@ -204,8 +231,8 @@ namespace GPSAlarmSL
 
         private void SearchButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            String oldCoordinateParametr = HitchCoordinateInString();
-            NavigationService.Navigate(new Uri(string.Format("/SearchPage.xaml?oldDestination={0}", oldCoordinateParametr), UriKind.Relative));
+            //String oldCoordinateParametr = HitchCoordinateInString();
+            //NavigationService.Navigate(new Uri(string.Format("/SearchPage.xaml?oldDestination={0}", oldCoordinateParametr), UriKind.Relative));
         }
 
         private void mainMap_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)

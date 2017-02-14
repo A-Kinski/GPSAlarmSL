@@ -82,7 +82,7 @@
                 Width="80"
                 VerticalAlignment="Bottom" 
                 Tap="ZoomIn_Tap" 
-                Background="Black" 
+                Background="{x:Null}" 
                 />
             <Button 
                 Name="ZoomOut"
@@ -94,7 +94,7 @@
                 Width="80"
                 VerticalAlignment="Center" 
                 Tap="ZoomOut_Tap"
-                Background="Black"/>
+                Background="{x:Null}"/>
             <Button 
                 Name="MyPosition"
                 Content="*" 
@@ -104,7 +104,7 @@
                 Width="80"
                 VerticalAlignment="Top" 
                 Tap="MyPosition_Tap"
-                Background="Black"/>
+                Background="{x:Null}"/>
             <Button
                 Name="SearchButton"
                 Content="Поиск"
@@ -115,7 +115,11 @@
                 Background="Black"
                 />
         </Grid>
-
+        <MediaElement
+            x:Name="alarm"            
+            Source="Assets/Media/Ring01.wma"
+            AutoPlay="False"
+            Visibility="Collapsed"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
