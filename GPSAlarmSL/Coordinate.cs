@@ -17,15 +17,6 @@ namespace GPSAlarmSL
             return distance;
         }
 
-        
-
-        //private void alarmLetsGo()
-        //{
-        //    //GpsAlarm gpsAlarm = new GpsAlarm();
-        //    //gpsAlarm.createAlarm();
-            
-        //}
-
         private static double degreToRadian(double coordinate)
         {
             return (coordinate * Math.PI) / 180;

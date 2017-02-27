@@ -12,6 +12,9 @@ namespace GPSAlarmSL
 {
     public partial class SearchPage : PhoneApplicationPage
     {
+        private double userLatitude { get; set; } = 0;
+        private double userLongitude { get; set; } = 0;
+
         public SearchPage()
         {
             InitializeComponent();
@@ -24,18 +27,25 @@ namespace GPSAlarmSL
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
+            //Первые две координаты в incomingString - текущие координаты пользователя
             string incomingString = NavigationContext.QueryString["oldDestination"].ToString();
 
-            string[] tmpCoordiantes = incomingString.Split('@');
+            //string[] tmpCoordiantes = incomingString.Split('@');
 
-            for (int i = 0; i < tmpCoordiantes.Length; i++)
-            {
-                string[] tmpCoordinate = tmpCoordiantes[i].Split(':');
+            //for (int i = 0; i < tmpCoordiantes.Length; i++)
+            //{
+            //    string[] tmpCoordinate = tmpCoordiantes[i].Split(':');
 
-                TextBlock oldDestination = new TextBlock();
-                oldDestination.Text = tmpCoordinate[0] + " " + tmpCoordinate[1];
-                oldDestinationStackPanel.Children.Add(oldDestination);
-            }
+            //    TextBlock oldDestination = new TextBlock();
+            //    oldDestination.Text = tmpCoordinate[0] + " " + tmpCoordinate[1];
+            //    oldDestinationStackPanel.Children.Add(oldDestination);
+            //}
+        }
+
+        private void searchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //Поиск по результатов по тексту
+            String text = searchTextBox.Text;
         }
     }
 }

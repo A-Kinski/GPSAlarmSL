@@ -73,6 +73,17 @@
                 DoubleTap="mainMap_DoubleTap" Hold="mainMap_Hold"
             />
             <Button 
+                Name="musicOff"
+                Content="Я проснулась!!!"
+                Visibility="Collapsed"
+                Background="Red"
+                Tap="musicOff_Tap"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                VerticalAlignment="Center"
+                />
+            
+            <Button 
                 Name="ZoomIn"
                 Content="+" 
                 FontSize="20"                
@@ -112,7 +123,7 @@
                 Grid.Column="1"
                 VerticalAlignment="Bottom" 
                 Tap="SearchButton_Tap"
-                Background="Black"
+                Background="{x:Null}"
                 />
         </Grid>
         <MediaElement

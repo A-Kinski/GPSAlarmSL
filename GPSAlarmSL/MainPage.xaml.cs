@@ -9,8 +9,9 @@ using Windows.Devices.Geolocation;
 using Microsoft.Phone.Maps.Controls;
 using System.Windows.Shapes;
 using System.Windows.Media;
-using Microsoft.Phone.BackgroundAudio;
-
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+using System.Windows.Controls;
 
 namespace GPSAlarmSL
 {
@@ -23,11 +24,9 @@ namespace GPSAlarmSL
         public MainPage()
         {
             InitializeComponent();
-
-            //mainMap.Layers.Add(currentPositionLayer);
-            //mainMap.Layers.Add(destinationPositionLayer);
         }
 
+        //handler для геолокатора на изменение позиции
         private void MyGeolocator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
         {
             if (!App.RunningInBackground)
@@ -46,7 +45,6 @@ namespace GPSAlarmSL
             }
         }
 
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (App.Geolocator == null)
@@ -59,8 +57,16 @@ namespace GPSAlarmSL
             alarm.MediaEnded += AlarmLoopback;
 
             mapSeetings();
+
+
+            //TODO отрисовка кнопки отключения музыки если PlayingMusic - true
+            if (App.PlayingMusic)
+            {
+                musicOff.Visibility = Visibility.Visible;
+            }
         }
 
+        //закольцовка медиа-элемента
         private void AlarmLoopback(object sender, RoutedEventArgs e)
         {
             var alarmMedia = sender as System.Windows.Controls.MediaElement;
@@ -78,6 +84,41 @@ namespace GPSAlarmSL
             App.Geolocator = null;
         }
 
+        //Отрисовка всплывающего уведомления
+        private void ShowMessageDialog()
+        {
+            ToastTemplateType toastTemplate = ToastTemplateType.ToastText02;
+
+            XmlDocument toastXML = ToastNotificationManager.GetTemplateContent(toastTemplate);
+
+            XmlNodeList toastTemplateText = toastXML.GetElementsByTagName("text");
+
+            toastTemplateText[0].AppendChild(toastXML.CreateTextNode("GPS Alarm!!!"));
+            toastTemplateText[1].AppendChild(toastXML.CreateTextNode("Мы приехали. Нажми меня, чтобы выключить музыку"));
+
+            IXmlNode toastNode = toastXML.SelectSingleNode("/toast");
+            ((XmlElement)toastNode).SetAttribute("duration", "long");
+
+            ToastNotification toast = new ToastNotification(toastXML);
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
+        }
+
+        //Включение будильника
+        private void PlayAlarm()
+        {
+            App.PlayingMusic = true;
+
+            Dispatcher.BeginInvoke(() => { alarm.Play(); });
+
+            if (App.RunningInBackground)
+            {
+                ShowMessageDialog();
+            }
+            else
+            {
+                musicOff.Visibility = Visibility.Visible;
+            }
+        }
         #endregion
 
         #region
@@ -103,29 +144,22 @@ namespace GPSAlarmSL
             destinationLongitude = longitude;
         }
 
-        //расчет дистанции - TODO сделать проверку дистанции
+        //расчет дистанции
         private void checkDistance(double latitude, double longitude)
         {
             //TODO если надо тащить координаты места назначения из памяти
             if (Coordinate.GetDistance(latitude, longitude, destinationLatitude, destinationLongitude) < alarmDistance)
             {
-                //TODO будильник
-                //GpsAlarm gpsAlarm = new GpsAlarm(alarm);
-                //gpsAlarm.createAlarm();
-
-                //BackgroundAudioPlayer.Instance.Play();
-                //alarm.Play();
-
-                PlayAlarm();
+                PlayAlarm();                
             }
+            
         }
 
-        private void PlayAlarm()
+        //Сброс координат места назначения
+        private void SetDestionationCoordinateToZero()
         {
-            alarm.Play();
-
-            //TODO ToastNotification
-
+            destinationLatitude = 1;
+            destinationLongitude = 1;
         }
         #endregion
 
@@ -183,6 +217,12 @@ namespace GPSAlarmSL
                 destinationPositionLayer.Add(overlay);
             }
         }
+
+        //Удаление точки назначения с карты
+        private void DeleteDestinationPositionLayer()
+        {
+            if (destinationPositionLayer.Count != 0) destinationPositionLayer.RemoveAt(0);
+        }
         #endregion
 
         #region
@@ -231,8 +271,8 @@ namespace GPSAlarmSL
 
         private void SearchButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            //String oldCoordinateParametr = HitchCoordinateInString();
-            //NavigationService.Navigate(new Uri(string.Format("/SearchPage.xaml?oldDestination={0}", oldCoordinateParametr), UriKind.Relative));
+            String oldCoordinateParametr = HitchCoordinateInString();
+            NavigationService.Navigate(new Uri(string.Format("/SearchPage.xaml?oldDestination={0}", oldCoordinateParametr), UriKind.Relative));
         }
 
         private void mainMap_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -254,6 +294,18 @@ namespace GPSAlarmSL
             drawPoint("destination", tappedCoordinate.Latitude, tappedCoordinate.Longitude);
             OldDestinationQueueWrite(tappedCoordinate.Latitude, tappedCoordinate.Longitude);
         }
+
+        private void musicOff_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            alarm.Stop();
+            App.PlayingMusic = false;
+            musicOff.Visibility = Visibility.Collapsed;
+
+            SetDestionationCoordinateToZero();
+
+            DeleteDestinationPositionLayer();
+
+        }
         #endregion
 
         #region
@@ -265,14 +317,20 @@ namespace GPSAlarmSL
 
         private string HitchCoordinateInString()
         {
-            string result = "";
+            string result = currentLatitude + ":" + currentLongitude;
+
             List<GeoCoordinate> tmpGeoCoordList = oldDestinationQueue.ToList();
 
-            for (int i = 0; i < tmpGeoCoordList.Count; i++)
+            if (tmpGeoCoordList.Count != 0)
             {
-                result += tmpGeoCoordList[i].Latitude + ":" + tmpGeoCoordList[i].Longitude;
+                result += "@";
 
-                if (i != tmpGeoCoordList.Count - 1) result += "@";
+                for (int i = 0; i < tmpGeoCoordList.Count; i++)
+                {
+                    result += tmpGeoCoordList[i].Latitude + ":" + tmpGeoCoordList[i].Longitude;
+
+                    if (i != tmpGeoCoordList.Count - 1) result += "@";
+                }
             }
 
             return result;

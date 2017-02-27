@@ -24,6 +24,7 @@ namespace GPSAlarmSL
 
         public static Geolocator Geolocator { get; set; }
         public static bool RunningInBackground { get; set; }
+        public static bool PlayingMusic { get; set; }
 
         /// <summary>
         /// Обеспечивает быстрый доступ к корневому кадру приложения телефона.
@@ -105,6 +106,7 @@ namespace GPSAlarmSL
         {
             CheckDataContainer();
 			RunningInBackground = false;
+            
         }
 
         // Код для выполнения при деактивации приложения (отправляется в фоновый режим)

@@ -36,7 +36,8 @@
             </Grid.RowDefinitions>
             <TextBox
                 Grid.Row="0"
-                Name="searchTextBox"
+                Name="searchTextBox" 
+                TextChanged="searchTextBox_TextChanged"
                 />
             <StackPanel
                 x:Name="oldDestinationStackPanel"
